@@ -7,7 +7,16 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
 
 export default function App() {
+  const [progress, setProgress] = useState(0)
   const GOAL= 2000;
+
+  const addWater = (amount) => {
+    setProgress(progress+amount)
+  }
+
+  const reiniciar = () => {
+    setProgress(0)
+  }
 
   return (
     <SafeAreaProvider>
@@ -16,7 +25,8 @@ export default function App() {
 
         <View>
           <Header objective={GOAL}/>
-          <WaterProgress objective={GOAL} progress={3000}/>
+          <WaterProgress objective={GOAL} progress={progress}/>
+          <ActionButtons funcao={addWater} reiniciar={reiniciar}/>
         </View>
 
       </SafeAreaView>
