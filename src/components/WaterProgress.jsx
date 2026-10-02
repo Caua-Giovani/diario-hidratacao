@@ -12,7 +12,7 @@ export function WaterProgress({objective, progress = 0}) {
             <View style={styles.progressBarBackground}>
                 <View style={[styles.progressBarFill, {width:`${porcentagem}%`}]}></View>
             </View>
-            {objective - progress <=0 ? <Text style={styles.progressConcluded}>Parabéns, você bateu sua meta.</Text> 
+            {objective - progress <=0 ? <Text style={styles.progressConcluded}>🎉Parabéns! Você atingiu a sua meta diária de água!</Text> 
             : <Text style={styles.progressRemain}>Continue bebendo agua para atingir a sua meta, faltam {objective-progress}ml.</Text>}
             
             
@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
     color:'green',
     marginTop:16,
     fontWeight:'bold',
+    textAlign: 'center',
   },
 });
 

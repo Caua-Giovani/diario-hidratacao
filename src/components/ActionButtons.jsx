@@ -6,6 +6,9 @@ export function ActionButtons({funcao, reiniciar}) {
         <View style={styles.container}>
             <Text style={styles.title}>Adiconar consumo:</Text>
             <View style={styles.containerButtons}>
+                <Pressable style={styles.button} onPress={()=> funcao(100)}>
+                    <Text style={styles.texto}>+100 ml</Text>
+                </Pressable>
                 <Pressable style={styles.button} onPress={()=> funcao(200)}>
                     <Text style={styles.texto}>+200 ml</Text>
                 </Pressable>
@@ -33,7 +36,7 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'center',
     width:'100%',
-    gap:25,
+    gap:10,
     marginTop:20,
   },
   button:{
@@ -41,8 +44,8 @@ const styles = StyleSheet.create({
     backgroundColor:COLORS.primary,
     padding: 10,
     borderRadius:10,
-    paddingLeft:20,
-    paddingRight:20,
+    paddingLeft:15,
+    paddingRight:15,
   },
   buttonReinicio:{
     backgroundColor:COLORS.danger,
