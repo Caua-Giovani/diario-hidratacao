@@ -4,20 +4,20 @@ import { COLORS } from "../constants/colors"
 export function ActionButtons({funcao, reiniciar}) {
     return(
         <View style={styles.container}>
-            <Text>Adiconar consumo:</Text>
+            <Text style={styles.title}>Adiconar consumo:</Text>
             <View style={styles.containerButtons}>
-                <Pressable style={styles.button} onPress={()=> funcao(250)}>
-                    <Text>+250 mL</Text>
+                <Pressable style={styles.button} onPress={()=> funcao(200)}>
+                    <Text style={styles.texto}>+200 mL</Text>
                 </Pressable>
                 <Pressable style={styles.button} onPress={()=> funcao(350)}>
-                    <Text>+350 mL</Text>
+                    <Text style={styles.texto}>+350 mL</Text>
                 </Pressable>
                 <Pressable style={styles.button} onPress={()=> funcao(500)}>
-                    <Text>+500 mL</Text>
+                    <Text style={styles.texto}>+500 mL</Text>
                 </Pressable>
             </View>
             <Pressable style={styles.buttonReinicio} onPress={()=> reiniciar()}>
-                    <Text>Reiniciar Dia</Text>
+                    <Text style={styles.texto}>Reiniciar Dia</Text>
                 </Pressable>
         </View>
     )
@@ -25,7 +25,8 @@ export function ActionButtons({funcao, reiniciar}) {
 
 const styles = StyleSheet.create({
   container:{
-        padding:10,
+    padding:10,
+    alignItems:'center',
   },
   containerButtons:{
     flexDirection: 'row',
@@ -33,10 +34,11 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     width:'100%',
     gap:25,
+    marginTop:20,
   },
   button:{
     color:'#fff',
-    backgroundColor:COLORS.secondary,
+    backgroundColor:COLORS.primary,
     padding: 10,
     borderRadius:10,
     paddingLeft:20,
@@ -48,5 +50,16 @@ const styles = StyleSheet.create({
     padding:10,
     textAlign:'center',
     borderRadius:10,
+    alignItems:'center',
+    width:'50%'
+  },
+  texto:{
+    color:'white',
+    fontWeight:'bold',
+  },
+  title:{
+    color:COLORS.textMain,
+    fontSize:18,
+    fontWeight:'bold',
   },
 })

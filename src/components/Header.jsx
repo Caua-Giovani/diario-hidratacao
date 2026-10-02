@@ -12,6 +12,7 @@ export function Header({objective}) {
 
 const styles = StyleSheet.create({
   container:{
+    marginTop: 40,
     alignItems:'center',
     marginBottom:24,
   },
