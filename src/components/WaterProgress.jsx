@@ -7,11 +7,15 @@ export function WaterProgress({objective, progress = 0}) {
 
     return(
         <View style={styles.card}>
-            <Text style={styles.consumedText}>{progress}mL</Text>
+            <Text style={styles.consumedText}>{progress} ml</Text>
             <Text style={styles.percentageText}>Você atingiu {porcentagem}% da Meta.</Text>
             <View style={styles.progressBarBackground}>
                 <View style={[styles.progressBarFill, {width:`${porcentagem}%`}]}></View>
             </View>
+            {objective - progress <=0 ? <Text style={styles.progressConcluded}>Parabéns, você bateu sua meta.</Text> 
+            : <Text style={styles.progressRemain}>Continue bebendo agua para atingir a sua meta, faltam {objective-progress}ml.</Text>}
+            
+            
         </View>
     )
     
@@ -55,6 +59,17 @@ const styles = StyleSheet.create({
     height: '100%',
     backgroundColor: COLORS.secondary,
     borderRadius: 6,
+  },
+  progressRemain:{
+    fontSize: 14,
+    color: COLORS.textMuted,
+    marginTop: 16,
+    textAlign: 'center',
+  },
+  progressConcluded:{
+    color:'green',
+    marginTop:16,
+    fontWeight:'bold',
   },
 });
 

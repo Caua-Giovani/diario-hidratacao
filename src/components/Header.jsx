@@ -5,14 +5,14 @@ export function Header({objective}) {
     return(
         <View style={styles.container}>
             <Text style={styles.title}>💧 Diário de Hidratação</Text>
-            <Text style={styles.subtitle}>Meta Diária: {objective}mL</Text>
+            <Text style={styles.subtitle}>Meta Diária: {objective} ml</Text>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
   container:{
-    marginTop: 40,
+    marginTop: 20,
     alignItems:'center',
     marginBottom:24,
   },
